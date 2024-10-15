@@ -72,73 +72,54 @@ TSharedRef<SDockTab> FTextBlockTestModule::OnSpawnPluginTab(const FSpawnTabArgs&
 			[
 				SNew(SVerticalBox)
 				+SVerticalBox::Slot()
-				//.AutoHeight()
+				.AutoHeight()
 				[
 					SNew(STextBlock)
 					.Text(WidgetText)
 				]
 				+SVerticalBox::Slot()
+				.AutoHeight()
 				[
 					SNew(STextBlock)
 					.Text(INVTEXT("Old/HyperlinkUnderline as strike. This is ok."))
 					.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.BrushUnderline"))
 				]
 				+SVerticalBox::Slot()
+				.AutoHeight()
 				[
-					SNew(STextBlock)
-					.Text(INVTEXT("Old/Border as strike brush v1"))
-					.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
-				]
-				+SVerticalBox::Slot()
-				[
-					SNew(STextBlock)
-					.Text(INVTEXT("Old/Border as strike brush v2"))
-					.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
-				]
-				+SVerticalBox::Slot()
-				[
-					SNew(STextBlock)
-					.Text(INVTEXT("Old/Border as strike brush v3"))
-					.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
-				]
-				+SVerticalBox::Slot()
-				[
-					SNew(STextBlock)
-					.Text(INVTEXT("Old/Border as strike brush v4"))
-					.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
-				]
-				+SVerticalBox::Slot()
-				[
-					SNew(SHorizontalBox)
-					+SHorizontalBox::Slot()
-					.AutoWidth()
+					SNew(SVerticalBox)
+					+SVerticalBox::Slot()
+					.AutoHeight()
 					[
 						SNew(STextBlock)
-						.Text(INVTEXT("Old/Border as strike brush h1"))
+						.Text(INVTEXT("Old/Border as strike brush v1"))
 						.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
 					]
-					+SHorizontalBox::Slot()
-					.AutoWidth()
+					+SVerticalBox::Slot()
 					[
 						SNew(STextBlock)
-						.Text(INVTEXT("Old/Border as strike brush h2"))
+						.Text(INVTEXT("Old/Border as strike brush v2"))
 						.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
 					]
-					+SHorizontalBox::Slot()
-					.AutoWidth()
+					+SVerticalBox::Slot()
 					[
-						SNew(STextBlock)
-						.Text(INVTEXT("Old/Border as strike brush h3"))
-						.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
-					]
-					+SHorizontalBox::Slot()
-					.AutoWidth()
-					[
-						SNew(STextBlock)
-						.Text(INVTEXT("Old/Border as strike brush h4"))
-						.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
-					]
-				]
+						SNew(SHorizontalBox)
+						+SHorizontalBox::Slot()
+						.AutoWidth()
+						[
+							SNew(STextBlock)
+							.Text(INVTEXT("Old/Border as strike brush h1"))
+							.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
+						]
+						+SHorizontalBox::Slot()
+						.AutoWidth()
+						[
+							SNew(STextBlock)
+							.Text(INVTEXT("Old/Border as strike brush h2"))
+							.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
+						]
+					]					
+				]				
 			]
 		];
 }
