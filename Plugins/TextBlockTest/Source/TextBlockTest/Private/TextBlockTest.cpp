@@ -81,8 +81,29 @@ TSharedRef<SDockTab> FTextBlockTestModule::OnSpawnPluginTab(const FSpawnTabArgs&
 				.AutoHeight()
 				[
 					SNew(STextBlock)
-					.Text(INVTEXT("Old/HyperlinkUnderline as strike. This is ok."))
+					.Text(INVTEXT("FSlateBrush Old/White as strike, 1x1. This is ok. It seems that it was used as intended."))
+					.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.BrushWhiteOneByOne"))
+				]
+				+SVerticalBox::Slot()
+				.AutoHeight()
+				[
+					SNew(STextBlock)
+					.Text(INVTEXT("FSlateBrush Old/White as strike, 16x16. This is ok. It seems that it was used as intended."))
+					.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.BrushWhite16"))
+				]
+				+SVerticalBox::Slot()
+				.AutoHeight()
+				[
+					SNew(STextBlock)
+					.Text(INVTEXT("FSlateBrush Old/HyperlinkUnderline as strike. This is ok."))
 					.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.BrushUnderline"))
+				]
+				+SVerticalBox::Slot()
+				.AutoHeight()
+				[
+					SNew(STextBlock)
+					.Text(INVTEXT("FSlateBorderBrush Old/HyperlinkUnderline as strike. This is ok."))
+					.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.BorderBrushUnderline"))
 				]
 				+SVerticalBox::Slot()
 				.AutoHeight()
@@ -92,14 +113,14 @@ TSharedRef<SDockTab> FTextBlockTestModule::OnSpawnPluginTab(const FSpawnTabArgs&
 					.AutoHeight()
 					[
 						SNew(STextBlock)
-						.Text(INVTEXT("Old/Border as strike brush v1"))
-						.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
+						.Text(INVTEXT("FSlateBrush Old/Border as strike brush. This is ok."))
+						.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.BrushBorder"))
 					]
 					+SVerticalBox::Slot()
 					[
 						SNew(STextBlock)
-						.Text(INVTEXT("Old/Border as strike brush v2"))
-						.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
+						.Text(INVTEXT("FSlateBrush Old/Border as strike brush. This is ok."))
+						.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.BrushBorder"))
 					]
 					+SVerticalBox::Slot()
 					[
@@ -108,18 +129,54 @@ TSharedRef<SDockTab> FTextBlockTestModule::OnSpawnPluginTab(const FSpawnTabArgs&
 						.AutoWidth()
 						[
 							SNew(STextBlock)
-							.Text(INVTEXT("Old/Border as strike brush h1"))
-							.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
+							.Text(INVTEXT("FSlateBrush Old/Border as strike brush. This is ok."))
+							.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.BrushBorder"))
 						]
 						+SHorizontalBox::Slot()
 						.AutoWidth()
 						[
 							SNew(STextBlock)
-							.Text(INVTEXT("Old/Border as strike brush h2"))
-							.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.StrikeAlpha"))
+							.Text(INVTEXT("FSlateBrush Old/Border as strike brush. This is ok."))
+							.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.BrushBorder"))
 						]
 					]					
-				]				
+				]
+				/*+SVerticalBox::Slot()
+				.AutoHeight()
+				[
+					SNew(SVerticalBox)
+					+SVerticalBox::Slot()
+					.AutoHeight()
+					[
+						SNew(STextBlock)
+						.Text(INVTEXT("FSlateBorderBrush Old/Border as strike brush. This will make a broken phenomenon."))
+						.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.BorderBrushBorder"))
+					]
+					+SVerticalBox::Slot()
+					[
+						SNew(STextBlock)
+						.Text(INVTEXT("FSlateBorderBrush Old/Border as strike brush. This will make a broken phenomenon."))
+						.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.BorderBrushBorder"))
+					]
+					+SVerticalBox::Slot()
+					[
+						SNew(SHorizontalBox)
+						+SHorizontalBox::Slot()
+						.AutoWidth()
+						[
+							SNew(STextBlock)
+							.Text(INVTEXT("FSlateBorderBrush Old/Border as strike brush. This will make a broken phenomenon."))
+							.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.BorderBrushBorder"))
+						]
+						+SHorizontalBox::Slot()
+						.AutoWidth()
+						[
+							SNew(STextBlock)
+							.Text(INVTEXT("FSlateBorderBrush Old/Border as strike brush. This will make a broken phenomenon."))
+							.TextStyle(&Style.GetWidgetStyle<FTextBlockStyle>("TextBlockTest.BorderBrushBorder"))
+						]
+					]					
+				]*/
 			]
 		];
 }

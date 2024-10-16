@@ -51,17 +51,41 @@ TSharedRef< FSlateStyleSet > FTextBlockTestStyle::Create()
 	Style->SetCoreContentRoot(EngineEditorSlateContentDir);
 
 	const FTextBlockStyle& BaseTextBlockStyle = FCoreStyle::Get().GetWidgetStyle<FTextBlockStyle>("NormalText");
+
+	FSlateBrush* BrushWhiteOneByOne = new CORE_IMAGE_BRUSH("Old/White", FVector2D(1.f, 1.f), FLinearColor::Red, ESlateBrushTileType::Both);	
+	//Style->Set( "NodeBulkReplace.BrushUnderline", BrushUnderline);
+	Style->Set("TextBlockTest.BrushWhiteOneByOne", FTextBlockStyle(BaseTextBlockStyle)
+		.SetStrikeBrush(*BrushWhiteOneByOne)		
+	);
 	
-	FSlateBorderBrush* BrushUnderline = new CORE_BORDER_BRUSH("Old/HyperlinkUnderline", FMargin(0.f, 0.f, 0.f, 0.4f));	
+	FSlateBrush* BrushWhite16 = new CORE_IMAGE_BRUSH("Old/White", FVector2D(16.f, 16.f), FLinearColor::Red, ESlateBrushTileType::Both);	
+	//Style->Set( "NodeBulkReplace.BrushUnderline", BrushUnderline);
+	Style->Set("TextBlockTest.BrushWhite16", FTextBlockStyle(BaseTextBlockStyle)
+		.SetStrikeBrush(*BrushWhite16)		
+	);
+	
+	FSlateBrush* BrushUnderline = new CORE_IMAGE_BRUSH("Old/HyperlinkUnderline", FVector2D(16.f, 16.f), FLinearColor::Red, ESlateBrushTileType::Both);	
 	//Style->Set( "NodeBulkReplace.BrushUnderline", BrushUnderline);
 	Style->Set("TextBlockTest.BrushUnderline", FTextBlockStyle(BaseTextBlockStyle)
 		.SetStrikeBrush(*BrushUnderline)		
 	);
 
-	FSlateBorderBrush* StrikeAlpha = new CORE_BORDER_BRUSH("Old/Border", FMargin(0.f, 0.f, 0.f, 4.f/16.f));
+	FSlateBrush* BrushBorder = new CORE_IMAGE_BRUSH("Old/Border", FVector2D(16.f, 16.f), FLinearColor::Red, ESlateBrushTileType::Both);
 	//Style->Set( "TextBlockTest.BorderBrush.BrushTestHotel", BrushTestHotel);
-	Style->Set("TextBlockTest.StrikeAlpha", FTextBlockStyle(BaseTextBlockStyle)
-		.SetStrikeBrush(*StrikeAlpha)		
+	Style->Set("TextBlockTest.BrushBorder", FTextBlockStyle(BaseTextBlockStyle)
+		.SetStrikeBrush(*BrushBorder)		
+	);
+
+	FSlateBorderBrush* BorderBrushUnderline = new CORE_BORDER_BRUSH("Old/HyperlinkUnderline", FMargin(0.f, 0.f, 0.f, 3.f / 16.0f));	
+	//Style->Set( "NodeBulkReplace.BrushUnderline", BrushUnderline);
+	Style->Set("TextBlockTest.BorderBrushUnderline", FTextBlockStyle(BaseTextBlockStyle)
+		.SetStrikeBrush(*BorderBrushUnderline)		
+	);
+
+	FSlateBorderBrush* BorderBrushBorder = new CORE_BORDER_BRUSH("Old/Border", FMargin(0.f, 0.f, 0.f, 3.f / 16.0f));
+	//Style->Set( "TextBlockTest.BorderBrush.BrushTestHotel", BrushTestHotel);
+	Style->Set("TextBlockTest.BorderBrushBorder", FTextBlockStyle(BaseTextBlockStyle)
+		.SetStrikeBrush(*BorderBrushBorder)		
 	);
 	
 	return Style;
