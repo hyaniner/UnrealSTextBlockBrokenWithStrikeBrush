@@ -2,7 +2,7 @@ Updated:
 
 I solved my curiosity and worry.
 
-I had to use FSlateBrush as the brush for the strike line. I saw that after my change from the FSlateBorderBrush to the FSlateBrush, this phenomenon does not appear anymore. (I'm ashamed.)
+I had to use FSlateBrush as the brush for the strike line. I saw that after my change from the FSlateBorderBrush to the FSlateBrush, this phenomenon does not appear anymore. (I'm ashamed.) It seems that I was confused after I saw the usage of the "Old/HyperlinkUnderline.png" as the hyperlink underline brush with the SetHovered(). I thought I had to use the FSlateBorderBrush for the underline and strikethrough.
 
 I'll update the code for the record for anyone else who may experience something similar to mine. (Maybe me of the future?) The part where this is happening is commented out. 
 
